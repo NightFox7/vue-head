@@ -95,7 +95,10 @@
      * @param  {Object} obj
      */
     title: function (obj) {
-      if (!obj) return
+      if (!obj) {
+        window.document.title = diffTitle.before
+        return
+      }
       diffTitle.before = opt.complement
       var title = obj.inner + ' ' + (obj.separator || opt.separator) +
         ' ' +  (obj.complement || opt.complement)
